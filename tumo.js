@@ -24,6 +24,7 @@ class Element {
 				child.data.parentElement = this
 			});
 		}
+		this.element
 	}
 	createElement() {
 		const element = document.createElement(this.data.tag);
@@ -45,15 +46,15 @@ class Element {
 			document.head.appendChild(borderStyleSheet);
 			const stylesheet = borderStyleSheet.sheet;
 			const rnd = '_yxyxxyxxxyx'.replace(/[xy]/g, (c) => {
-				var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+				let r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
 				return v.toString(16);
 			});
 			var newClass
 			if (this.data.attributes.class) {
-				var newClass = this.data.attributes.class + rnd
+				newClass = this.data.attributes.class + rnd
 				this.data.attributes.class = `${this.data.attributes.class} ${newClass}`
 			} else {
-				var newClass = rnd
+				newClass = rnd
 				this.data.attributes.class = newClass
 			}
 			stylesheet.insertRule(`.${newClass} {${this.data.style}}`, 0)
@@ -63,6 +64,7 @@ class Element {
 				element.setAttribute(key, this.data.attributes[key]);
 			}
 		}
+		this.element = element
 		return element;
 	}
 	update() {

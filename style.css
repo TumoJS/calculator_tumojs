@@ -19,7 +19,8 @@ main {
 	height: 100%;
 	display: flex;
 	align-items: center;
-	user-select: none
+	user-select: none;
+	justify-content: center
 }
 .gridnums {
 	width: calc(70% - .5em);
@@ -33,6 +34,10 @@ main {
 .numelem {
 	background-color: rgba(245,245,245, 0.1);
 	padding: 1em;
+	transition: all 1s
+}
+.numelem:hover {
+	background-color: rgba(245,245,245, 0.5)
 }
 .numelem p, .symbelem p {
 	text-align: center;
@@ -49,8 +54,6 @@ main {
 .gridsymbs .equal {
 	grid-row-start: 4;
 	grid-row-end: 5;
-	grid-column-start: 1;
-	grid-column-end: 3
 }
 .gridsymbs .plus {
 	grid-row-start: 2;
@@ -60,10 +63,14 @@ main {
 	align-items: center;
 }
 .symbelem {
-	background-color: #0093E9;
-	background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+	background-image: linear-gradient(160deg, rgba(0, 147, 233, 1) 0%, rgba(128, 208, 199, 1) 100%);
+	opacity: 1;
 	border-radius: 2.5em;
 	padding: 1em;
+	transition: all 0.5s ease-in-out;
+}
+.symbelem:hover {
+	opacity: 0.6
 }
 .cont_brackets {
 	display: flex;
@@ -77,6 +84,10 @@ main {
 	background-color: #0093E9;
 	background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
 	border-radius: 2.5em;
+	transition: all 0.5s ease-in-out
+}
+.cont_brackets div:hover {
+	opacity: 0.6
 }
 .input {
 	font-family: Poppins;
@@ -84,5 +95,19 @@ main {
 	outline: 0;
 	border: 0;
 	font-size: 2em;
-	border-bottom: 1px solid lightgray
+	border-bottom: 1px solid lightgray;
+	color: black
+}
+.copybutton {
+	grid-column-start: 1;
+	grid-column-end: 4;
+	background-image: -webkit-linear-gradient( top left, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 37%, rgba(255, 255, 255, 0.8) 45%, rgba(255, 255, 255, 0.0) 50% );
+	background-position: 100% 0, 0 0;
+	background-size: 250% 250%, 100% 100%;
+	transition: all 0.2s ease-in-out;
+}
+.copybutton:hover {
+	color: white;
+	background-position: 0 0, 0 0;
+	transition-duration: 0.5s;
 }
