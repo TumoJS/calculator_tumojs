@@ -1,0 +1,88 @@
+#app {
+	height: 100%;
+}
+html {
+	font-family: Poppins;
+	height: 100%;
+}
+body {
+	font-family: Poppins;
+	background-color: #D9AFD9;
+	background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+	background-repeat: no-repeat;
+	height: 100%;
+	margin: 0
+}
+main {
+	max-width: 80%;
+	margin: auto;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	user-select: none
+}
+.gridnums {
+	width: calc(70% - .5em);
+	float: left;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-row-gap: .5em;
+	grid-column-gap: .5em;
+	margin-right: .5em;
+}
+.numelem {
+	background-color: rgba(245,245,245, 0.1);
+	padding: 1em;
+}
+.numelem p, .symbelem p {
+	text-align: center;
+	margin: 0;
+}
+.gridsymbs {
+	width: 30%;
+	float: left;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-row-gap: .5em;
+	grid-column-gap: .5em
+}
+.gridsymbs .equal {
+	grid-row-start: 4;
+	grid-row-end: 5;
+	grid-column-start: 1;
+	grid-column-end: 3
+}
+.gridsymbs .plus {
+	grid-row-start: 2;
+	grid-row-end: 4;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.symbelem {
+	background-color: #0093E9;
+	background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+	border-radius: 2.5em;
+	padding: 1em;
+}
+.cont_brackets {
+	display: flex;
+	justify-content: space-between;
+	margin: .5em 0
+}
+.cont_brackets div {
+	width: 48%;
+	text-align: center;
+	padding: 1em 0;
+	background-color: #0093E9;
+	background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+	border-radius: 2.5em;
+}
+.input {
+	font-family: Poppins;
+	background: transparent;
+	outline: 0;
+	border: 0;
+	font-size: 2em;
+	border-bottom: 1px solid lightgray
+}
